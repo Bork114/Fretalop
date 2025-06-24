@@ -23,6 +23,7 @@ float3 HatchingLightHandling(HatchingLightingData d, Light light){
 
 float CalculateHatchingLighting(HatchingLightingData d){ 
 #ifdef SHADERGRAPH_PREVIEW
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hls"
     // In preview, estimate diffuse + specular
     
     float3 lightDir = float3(0.5,0.5,0);
