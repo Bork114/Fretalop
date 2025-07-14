@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ckcares3l3huu"]
+
+[ext_resource type="Shader" uid="uid://dqxeqy3li75kh" path="res://Assets/Shaders/Hatching_Shader.gdshader" id="1_6vct2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_6vct2")

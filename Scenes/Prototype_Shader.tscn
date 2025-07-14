@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://chf1j0hfk4u2q"]
+
+[ext_resource type="ArrayMesh" uid="uid://oerrhotr8ski" path="res://Assets/Models/Characters/Knight.obj" id="1_5fpf2"]
+[ext_resource type="Shader" uid="uid://bh44yk7f1ary1" path="res://Assets/Shaders/Outline_PostP.gdshader" id="2_rlq0q"]
+
+[sub_resource type="Environment" id="Environment_0tx30"]
+background_mode = 1
+background_color = Color(0.801477, 0.962455, 0.922416, 1)
+sdfgi_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yiyke"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5fpf2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rlq0q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlq0q"]
+render_priority = 0
+shader = ExtResource("2_rlq0q")
+shader_parameter/depth_treshold = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_rkmmt"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkiaq"]
+render_priority = 0
+shader = ExtResource("2_rlq0q")
+shader_parameter/depth_treshold = 0.05
+
+[node name="Main Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0tx30")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.766475, -0.329453, 0.551342, -0.135202, 0.756423, 0.639957, -0.627883, -0.565053, 0.535236, 0, 5.46786, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 0.177, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_yiyke")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.05, 0, 0, 0, 37.3751, 0, 0, 0, 0.328923, -0.41997, 10.3079, 0.0248009)
+mesh = SubResource("BoxMesh_5fpf2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.05, 0, 0, 0, 5.64972, 0, 0, 0, 0.05, -0.1885, 8.62113, 0.0481298)
+mesh = SubResource("SphereMesh_rlq0q")
+skeleton = NodePath("../..")
+
+[node name="Knight" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+mesh = ExtResource("1_5fpf2")
+surface_material_override/0 = SubResource("ShaderMaterial_rlq0q")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00815392, 2.41548, 4.67475)
+fov = 70.3125
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00815392, 0.0140011, -0.956202)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_rkmmt")
+surface_material_override/0 = SubResource("ShaderMaterial_mkiaq")
