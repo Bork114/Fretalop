@@ -1,7 +1,19 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ckcares3l3huu"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ckcares3l3huu"]
 
-[ext_resource type="Shader" uid="uid://dqxeqy3li75kh" path="res://Assets/Shaders/Hatching_Shader.gdshader" id="1_6vct2"]
+[ext_resource type="Shader" uid="uid://djtupea4wpco7" path="res://Assets/Shaders/Hatching.gdshader" id="1_ikn0k"]
+[ext_resource type="Texture2D" uid="uid://ckaqoby5lxmpn" path="res://Assets/Shaders/Textures/Environmests/hatch.png" id="2_86w6u"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_6vct2")
+shader = ExtResource("1_ikn0k")
+shader_parameter/hatch_texture = ExtResource("2_86w6u")
+shader_parameter/albedo = Color(0.601223, 0.601223, 0.601223, 1)
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/cuts = 7
+shader_parameter/wrap = -0.0459999
+shader_parameter/steepness = 1.364
+shader_parameter/hatch_scale = 2.0
+shader_parameter/rim_width = 8.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_rim = false
+shader_parameter/use_triplanar = true

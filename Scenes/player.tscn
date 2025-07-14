@@ -1,52 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxnwcry3uecpk"]
+[gd_scene load_steps=6 format=3 uid="uid://cxnwcry3uecpk"]
 
-[ext_resource type="Shader" uid="uid://bh44yk7f1ary1" path="res://Assets/Shaders/Outline_PostP.gdshader" id="1_cvnsp"]
 [ext_resource type="ArrayMesh" uid="uid://oerrhotr8ski" path="res://Assets/Models/Characters/Knight.obj" id="2_6t5aa"]
-[ext_resource type="Shader" uid="uid://cd8hmuhjqdlc1" path="res://Scenes/Shadow.gdshader" id="2_fkybt"]
 [ext_resource type="Material" uid="uid://ckcares3l3huu" path="res://Assets/Shaders/Materials/Hatching_M.tres" id="3_6t5aa"]
-[ext_resource type="Material" uid="uid://bdltxx5d03x0j" path="res://Assets/Shaders/Materials/Shadow_M.tres" id="5_x3wgy"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_vgqql"]
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkybt"]
-render_priority = 0
-shader = ExtResource("1_cvnsp")
-shader_parameter/depth_treshold = 0.05
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_x3wgy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3smsa"]
-render_priority = 0
-shader = ExtResource("2_fkybt")
-shader_parameter/shadow_color = Color(1, 0.0833333, 0, 1)
-shader_parameter/shadow_opacity = 0.5
-shader_parameter/shadow_max_opacity = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_6t5aa"]
 
 [node name="Player" type="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965545, 1.88767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965545, 3.61573)
 
 [node name="HatchingPostP" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(0.997993, -0.0633305, 0, 0.0633305, 0.997993, 0, 0, 0, 1, 0, 0, -0.803349)
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_vgqql")
-surface_material_override/0 = SubResource("ShaderMaterial_fkybt")
 
 [node name="Scene" type="Node3D" parent="."]
 
 [node name="GroundPlane" type="MeshInstance3D" parent="Scene"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_x3wgy")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_3smsa")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Scene"]
+[node name="Test_Sphere" type="MeshInstance3D" parent="Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.859255, 0.682293, 0)
 mesh = SubResource("SphereMesh_6t5aa")
 surface_material_override/0 = ExtResource("3_6t5aa")
@@ -54,7 +36,6 @@ surface_material_override/0 = ExtResource("3_6t5aa")
 [node name="Knight" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, 0.02, 0, -0.02, -8.74228e-10, 0.0979658, 0, -0.0677469)
 mesh = ExtResource("2_6t5aa")
-surface_material_override/0 = ExtResource("5_x3wgy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.613786, -0.41725, -0.670201, 0.616654, -0.276692, 0.737007, -0.492955, -0.865647, 0.0874687, -0.32871, 1.33349, 0)
+transform = Transform3D(0.816741, -0.503037, 0.282646, -0.353274, -0.0486446, 0.934255, -0.456216, -0.862895, -0.21744, -0.32871, 1.33349, 0)

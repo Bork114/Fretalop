@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b037lf7kcxqcx"
-path.s3tc="res://.godot/imported/Hatch2.png-6f63bf66f5275657c6dbd7c6e5fc6d5d.s3tc.ctex"
+uid="uid://ckaqoby5lxmpn"
+path.s3tc="res://.godot/imported/hatch.png-bbe6dc21db907d837e064e18f539f5c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Shaders/Textures/Environmests/Hatch2.png"
-dest_files=["res://.godot/imported/Hatch2.png-6f63bf66f5275657c6dbd7c6e5fc6d5d.s3tc.ctex"]
+source_file="res://Assets/Shaders/Textures/Environmests/hatch.png"
+dest_files=["res://.godot/imported/hatch.png-bbe6dc21db907d837e064e18f539f5c7.s3tc.ctex"]
 
 [params]
 
