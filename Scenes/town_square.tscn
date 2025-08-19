@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddwiki3yvqy0g"]
+[gd_scene load_steps=2 format=3 uid="uid://840atf4t0ucs"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_whrbi"]
 size = Vector2(20, 20)
