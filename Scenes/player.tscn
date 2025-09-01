@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxnwcry3uecpk"]
+[gd_scene load_steps=5 format=3 uid="uid://cxnwcry3uecpk"]
 
-[ext_resource type="ArrayMesh" uid="uid://oerrhotr8ski" path="res://Assets/Models/Characters/Knight.obj" id="2_6t5aa"]
 [ext_resource type="Material" uid="uid://ckcares3l3huu" path="res://Assets/Shaders/Materials/Hatching_M.tres" id="3_6t5aa"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_vgqql"]
@@ -32,10 +31,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.859255, 0.682293, 0)
 mesh = SubResource("SphereMesh_6t5aa")
 surface_material_override/0 = ExtResource("3_6t5aa")
-
-[node name="Knight" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, 0.02, 0, -0.02, -8.74228e-10, 0.0979658, 0, -0.0677469)
-mesh = ExtResource("2_6t5aa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.816741, -0.503037, 0.282646, -0.353274, -0.0486446, 0.934255, -0.456216, -0.862895, -0.21744, -0.32871, 1.33349, 0)
