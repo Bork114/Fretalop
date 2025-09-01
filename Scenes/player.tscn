@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxnwcry3uecpk"]
+[gd_scene load_steps=4 format=3 uid="uid://cxnwcry3uecpk"]
 
-[ext_resource type="Material" uid="uid://ckcares3l3huu" path="res://Assets/Shaders/Materials/Hatching_M.tres" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://b6andpulslhwn" path="res://Scenes/Y Bot.fbx" id="1_v0iea"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_vgqql"]
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_x3wgy"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_6t5aa"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cvnsp"]
+radius = 0.272257
+height = 1.81685
 
 [node name="Player" type="CharacterBody3D"]
 
@@ -20,17 +20,9 @@ transform = Transform3D(0.997993, -0.0633305, 0, 0.0633305, 0.997993, 0, 0, 0, 1
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_vgqql")
 
-[node name="Scene" type="Node3D" parent="."]
+[node name="Y Bot" parent="." instance=ExtResource("1_v0iea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00676376, 0, -0.0192685)
 
-[node name="GroundPlane" type="MeshInstance3D" parent="Scene"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("PlaneMesh_x3wgy")
-skeleton = NodePath("../..")
-
-[node name="Test_Sphere" type="MeshInstance3D" parent="Scene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.859255, 0.682293, 0)
-mesh = SubResource("SphereMesh_6t5aa")
-surface_material_override/0 = ExtResource("3_6t5aa")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.816741, -0.503037, 0.282646, -0.353274, -0.0486446, 0.934255, -0.456216, -0.862895, -0.21744, -0.32871, 1.33349, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903524, 0)
+shape = SubResource("CapsuleShape3D_cvnsp")
